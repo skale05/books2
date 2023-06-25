@@ -1,0 +1,34 @@
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.book-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.book-author,
+.book-description,
+.book-category,
+.book-publishedat,
+.book-isactive {
+    margin-bottom: 5px;
+}
