@@ -1,5 +1,3 @@
-// server.js
-
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -8,17 +6,12 @@ const pool = require('./db');
 const books = require('./books');
 
 app.use(cors());
-
-app.use(cors({
-    origin: 'http://localhost:3000'
-}));
+app.use(express.json());
 
 app.set('db', pool);
 
-
-app.get('/books', books.getAllBooks);
-app.get('/books/:id', books.getBookById);
-
+app.get('/books', cors(), books.getAllBooks);
+app.get('/books/:id', cors(), books.getBookById);
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
