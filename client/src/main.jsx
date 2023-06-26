@@ -9,7 +9,7 @@ const books = [];
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router basename="/books">
-      <App books={books} /> {/* Pass the books array as a prop to the App component */}
+      <App books={books} /> {}
     </Router>
   </React.StrictMode>
 );

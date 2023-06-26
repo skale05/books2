@@ -27,7 +27,7 @@ const BookList = ({ books }) => {
         method: 'DELETE',
       });
       if (response.ok) {
-        // Book deleted successfully, update the book list
+        
         setData((prevData) => prevData.filter((book) => book.id !== bookId));
       } else {
         console.log('Failed to delete book');
@@ -46,16 +46,18 @@ const BookList = ({ books }) => {
             <Card.Img variant="top" src={book.cover_url} className="CardImg" />
             <Card.Body>
               <Card.Title>{book.title}</Card.Title>
+              <Card.Text>{book.author}</Card.Text>
               <Card.Text>{book.description}</Card.Text>
+              <Card.Text>{book.category}</Card.Text>
               <div className="CardBtns">
-                <Button variant="primary" style={{ width: '50%', marginRight: '5px' }}>
+                {/* <Button variant="primary" style={{ width: '50%', marginRight: '5px' }}>
                   <Link className="ShowMore" to={`/books/${book.id}`} style={{ color: 'white', marginRight: '5px' }}>
                     Read more
                   </Link>
                 </Button>
                 <Button onClick={() => handleDelete(book.id)} variant="danger" style={{ color: 'white', width: '50%' }}>
                   Delete Book
-                </Button>
+                </Button> */}
               </div>
             </Card.Body>
           </Card>
